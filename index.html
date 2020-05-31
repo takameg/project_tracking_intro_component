@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  
+  <title>Frontend Mentor | Project tracking intro component</title>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="bg"></div>
+
+    <header>
+      <div class="header">
+        <img src="images/logo.svg" alt="Logo">
+        <div class="right">
+          <img id="hamburger" src="images/icon-hamburger.svg" alt="hamburger">
+          <img id="close" src="images/icon-close.svg" alt="close">
+        </div>
+      </div>
+    </header>
+
+    <div id="pop-up">
+      <ul>
+        <li><a href="#">Product</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+      <a class="login" href="#">Login</a>
+    </div>
+
+    <main>
+      <div class="right">
+        <img src="images/illustration-devices.svg" alt="Illustration of devices">
+      </div>
+
+      <div class="left">
+        <p class="first-line"><span>New</span> Monograph Dashboard</p>
+        <h1>Powerful insights into your team</h1>
+        <p class="lowercase">Project planning and time tracking for agile teams</p>
+        <a href="#">Schedule a demo</a>
+        <p class="beside-button">to see a preview</p>
+      </div>
+    </main>
+  
+    <footer>
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">takameg</a>.
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    var hamburger = document.getElementById("hamburger");
+    var close = document.getElementById("close");
+    var popUp = document.getElementById("pop-up");      
+
+    
+    hamburger.onclick = function() {       
+      hamburger.style.display = "none";
+      close.style.display = "block";
+      popUp.style.animation = "fadeIn 1s ease 0s 1 normal";
+      popUp.style.opacity = "1";
+    } 
+
+    close.onclick = function() {
+      hamburger.style.display = "block";
+      close.style.display = "none"
+      popUp.style.animation = "fadeOut 1s ease 0s 1 normal"
+      popUp.style.opacity = "0";
+    }
+      
+    function switchByWidth() {
+      if (window.matchMedia('(max-width: 960px)').matches) {
+        hamburger.style.display = "block";
+        close.style.display = "none";
+        popUp.style.opacity = "0";
+      } else {
+        hamburger.style.display = "none";
+        close.style.display = "none";
+        popUp.style.opacity = "1"; 
+      }
+    }
+
+    window.onload = switchByWidth;
+    window.onresize = switchByWidth;
+    
+  </script>
+</body>
+</html>
