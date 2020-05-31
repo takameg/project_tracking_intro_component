@@ -252,6 +252,7 @@ footer {
 
 footer a {
   display: inline;
+  color: #242942;
 }
 
 footer a:hover {
